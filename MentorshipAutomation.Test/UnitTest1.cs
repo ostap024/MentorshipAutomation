@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace Tests
+namespace MentorshipAutomation.Test
 {
     public class Tests
     {
