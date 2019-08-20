@@ -1,6 +1,7 @@
-﻿using OpenQA.Selenium;
+﻿using System.IO;
+using System.Reflection;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.Events;
 
 namespace MentorshipAutomation.Base
 {
@@ -10,7 +11,7 @@ namespace MentorshipAutomation.Base
 
         public static IWebDriver GetDriver()
         {
-            return _driver ?? (_driver = new ChromeDriver());
+            return _driver ?? (_driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)));
         }
 
         public static void Reset()

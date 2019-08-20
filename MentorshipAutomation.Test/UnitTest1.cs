@@ -1,18 +1,18 @@
+using System.Linq;
+using MentorshipAutomation.Base;
+using MentorshipAutomation.PageObjects.Pages;
 using NUnit.Framework;
 
 namespace MentorshipAutomation.Test
 {
-    public class Tests
+    public class Tests:BaseTest
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
         [Test]
         public void Test1()
         {
-            Assert.Pass();
+            var authenticationPage = new AuthenticationPage();
+            WebDriver.GetDriver().Navigate().GoToUrl(authenticationPage.PageUrl);
+            authenticationPage.Login("johnwick322@gmail.com", "qwerty");
         }
     }
 }
