@@ -11,5 +11,7 @@ namespace MentorshipAutomation.PageObjects
     public class MainMenuContainer
     {
         public ButtonElement Login => new ButtonElement(WebDriver.GetDriver().FindElement(By.ClassName("login")));
+
+        public ButtonElement Logout => new ButtonElement(WebDriver.GetDriver().FindElement(By.ClassName("logout")));
     }
 }

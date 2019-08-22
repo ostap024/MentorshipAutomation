@@ -31,5 +31,10 @@ namespace MentorshipAutomation.PageObjects
             MainMenu.Login.Click();
             return new AuthenticationPage();
         }
+
+        public void Logout()
+        {
+            MainMenu.Logout.Click();
+        }
     }
 }

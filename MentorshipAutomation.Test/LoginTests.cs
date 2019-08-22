@@ -13,9 +13,18 @@ namespace MentorshipAutomation.Test
         public void SuccessLoginTest(string email, string password)
         {
             var page = new BasePage();
+
             page = page.GoToLoginPage()
                 .Login(email, password);
+
             Assert.That(page.PageTitle, Is.EqualTo("My account - My Store"));
+        }
+
+        [TearDown]
+        public void AfterAll()
+        {
+            var page = new MyAccount();
+            page.Logout();
         }
     }
 }
