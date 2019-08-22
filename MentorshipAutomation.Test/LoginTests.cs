@@ -9,12 +9,12 @@ namespace MentorshipAutomation.Test
 {
     public class LoginTests : BaseTest
     {
-        [Test]
-        public void SuccessLoginTest()
+        [TestCase("johnwick322@gmail.com", "qwerty")]
+        public void SuccessLoginTest(string email, string password)
         {
             var page = new BasePage();
             page = page.GoToLoginPage()
-                .Login("johnwick322@gmail.com", "qwerty");
+                .Login(email, password);
             Assert.That(page.PageTitle, Is.EqualTo("My account - My Store"));
         }
     }
