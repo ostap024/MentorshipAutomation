@@ -9,7 +9,6 @@ namespace MentorshipAutomation.PageObjects.Pages
 {
     public class AuthenticationPage:BasePage
     {
-        public override string PageTitle => "Login - My Store";
         public override string PagePath => "controller=authentication";
 
         public InputElement Email => new InputElement(WebDriver.GetDriver().FindElement(By.Id("email")));
@@ -18,11 +17,12 @@ namespace MentorshipAutomation.PageObjects.Pages
 
         public ButtonElement SingIn => new ButtonElement(WebDriver.GetDriver().FindElement(By.Id("SubmitLogin")));
 
-        public void Login(string email, string password)
+        public MyAccount Login(string email, string password)
         {
             Email.SendKeys(email);
             Password.SendKeys(password);
             SingIn.Click();
+            return new MyAccount();
         }
     }
 }

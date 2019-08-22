@@ -12,6 +12,7 @@ namespace MentorshipAutomation.Test
         public void SetUp()
         {
             WebDriver.GetDriver().Manage().Window.Maximize();
+            WebDriver.GetDriver().Navigate().GoToUrl(TestConstants.BaseUrl);
         }
 
         [OneTimeTearDown]

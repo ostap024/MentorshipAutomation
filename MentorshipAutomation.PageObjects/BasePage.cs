@@ -1,5 +1,6 @@
 ﻿using System;
 using MentorshipAutomation.Base;
+using MentorshipAutomation.PageObjects.Pages;
 using OpenQA.Selenium;
 
 namespace MentorshipAutomation.PageObjects
@@ -25,9 +26,10 @@ namespace MentorshipAutomation.PageObjects
         #endregion
 
 
-        public void Login()
+        public AuthenticationPage GoToLoginPage()
         {
             MainMenu.Login.Click();
+            return new AuthenticationPage();
         }
     }
 }
