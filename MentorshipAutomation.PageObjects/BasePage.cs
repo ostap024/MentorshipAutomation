@@ -1,5 +1,6 @@
 ﻿using System;
 using MentorshipAutomation.Base;
+using MentorshipAutomation.PageObjects.Containers;
 using MentorshipAutomation.PageObjects.Pages;
 using OpenQA.Selenium;
 
@@ -32,9 +33,10 @@ namespace MentorshipAutomation.PageObjects
             return new AuthenticationPage();
         }
 
-        public void Logout()
+        public MyAccount GoToMyAccountPage()
         {
-            MainMenu.Logout.Click();
+            MainMenu.MyAccount.Click();
+            return new MyAccount();
         }
     }
 }
