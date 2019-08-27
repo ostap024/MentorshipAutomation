@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 
 namespace MentorshipAutomation.Base.Elements
 {
@@ -44,6 +45,11 @@ namespace MentorshipAutomation.Base.Elements
             WebElement.Submit();
         }
 
+        public void MoveTo()
+        {
+            Actions action = new Actions(Driver);
+            action.MoveToElement(WebElement).Perform();
+        } 
         public void Click()
         {
             WebElement.Click();

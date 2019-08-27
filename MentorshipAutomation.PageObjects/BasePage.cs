@@ -24,8 +24,30 @@ namespace MentorshipAutomation.PageObjects
 
         #region Web Elements
         protected MainMenuContainer MainMenu => new MainMenuContainer();
+        protected ProductContainer ProductContainer => new ProductContainer();
+        public void AddAllProductToCart()
+        {
+            var product = ProductContainer.Product;
+            var productAddToCart = ProductContainer.AddToCart;
+           product.MoveTo();
+           productAddToCart.Click();
+           //foreach (var product in products)
+           //{
+           //    product.Click();
+           //}
+        }
         #endregion
 
+        public OrderPage GoToOrderPage()
+        {
+            MainMenu.CartContainer.Cart.Click();
+            return new OrderPage();
+        }
+
+        public void MoveToCart()
+        {
+            MainMenu.CartContainer.Cart.MoveTo();
+        }
 
         public AuthenticationPage GoToLoginPage()
         {
