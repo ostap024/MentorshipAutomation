@@ -27,7 +27,7 @@ namespace MentorshipAutomation.Test
             var page = new BasePage();
             var itemsPage = page.GoToWomenItems();
             itemsPage.AddAllProductToCart();
-            page.MoveToCart();
+            page.MoveToCart(); 
             Thread.Sleep(5000);
         }
     }
