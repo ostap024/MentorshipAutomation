@@ -12,6 +12,9 @@ namespace MentorshipAutomation.PageObjects.Containers
 
         public ButtonElement MyAccount => new ButtonElement(WebDriver.GetDriver().FindElement(By.ClassName("account")));
 
+        public ButtonElement Women => new ButtonElement(WebDriver.GetDriver().FindElement(
+            By.XPath("//div[@id='block_top_menu']//ul//a[@title='Women']")));
+
         public ButtonElement ContactUs => new ButtonElement(WebDriver.GetDriver().FindElement(By.XPath("//div[@id='contact-link']/a")));
 
         public CartContainer CartContainer => new CartContainer();

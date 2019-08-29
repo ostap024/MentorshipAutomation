@@ -13,6 +13,7 @@ namespace MentorshipAutomation.Test
         {
             WebDriver.GetDriver().Manage().Window.Maximize();
             WebDriver.GetDriver().Navigate().GoToUrl(TestConstants.BaseUrl);
+            WebDriver.GetDriver().Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
 
         [OneTimeTearDown]

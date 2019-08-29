@@ -22,11 +22,12 @@ namespace MentorshipAutomation.Test
         }
 
         [Test]
-        public void CartHoverTest()
+        public void AddItemsToCartTest()
         {
             var page = new BasePage();
-            page.AddAllProductToCart();
-            //page.MoveToCart();
+            var itemsPage = page.GoToWomenItems();
+            itemsPage.AddAllProductToCart();
+            page.MoveToCart();
             Thread.Sleep(5000);
         }
     }

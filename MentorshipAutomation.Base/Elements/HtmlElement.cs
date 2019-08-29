@@ -9,9 +9,10 @@ namespace MentorshipAutomation.Base.Elements
 {
     public class HtmlElement
     {
+        internal Search SearchWrapper;
         protected IWebDriver Driver => WebDriver.GetDriver();
 
-        public IWebElement WebElement { get; }
+        protected IWebElement WebElement { get; }
 
         public HtmlElement(IWebElement element)
         {
