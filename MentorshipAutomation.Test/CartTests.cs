@@ -30,5 +30,14 @@ namespace MentorshipAutomation.Test
             page.MoveToCart(); 
             Thread.Sleep(5000);
         }
+
+        [Test]
+        public void GoToItemTest()
+        {
+            var page = new BasePage();
+            var itemsPage = page.GoToWomenItems();
+            itemsPage.GoToProduct();
+            Thread.Sleep(5000);
+        }
     }
 }
