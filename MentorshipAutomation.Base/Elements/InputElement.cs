@@ -6,11 +6,12 @@ using OpenQA.Selenium.Interactions;
 
 namespace MentorshipAutomation.Base.Elements
 {
-    public class InputElement:HtmlElement
+    public class InputElement:Element
     {
-        public InputElement(IWebElement element) : base(element)
+        public InputElement(Search searchWrapper) : base(searchWrapper)
         {
         }
+        
         public virtual string Value => GetAttribute("value");
 
         public virtual void Clear()

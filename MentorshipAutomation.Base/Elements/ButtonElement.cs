@@ -5,9 +5,9 @@ using OpenQA.Selenium;
 
 namespace MentorshipAutomation.Base.Elements
 {
-    public class ButtonElement:HtmlElement
+    public class ButtonElement:Element
     {
-        public ButtonElement(IWebElement element) : base(element)
+        public ButtonElement(Search searchWrapper) : base(searchWrapper)
         {
         }
     }

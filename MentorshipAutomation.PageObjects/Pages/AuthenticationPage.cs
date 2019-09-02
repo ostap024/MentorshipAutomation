@@ -11,11 +11,11 @@ namespace MentorshipAutomation.PageObjects.Pages
     {
         public override string PagePath => "controller=authentication";
 
-        public InputElement Email => new InputElement(WebDriver.GetDriver().FindElement(By.Id("email")));
+        public InputElement Email => new InputElement(Search.Id("email"));
 
-        public InputElement Password => new InputElement(WebDriver.GetDriver().FindElement(By.Id("passwd")));
+        public InputElement Password => new InputElement(Search.Id("passwd"));
 
-        public ButtonElement SingIn => new ButtonElement(WebDriver.GetDriver().FindElement(By.Id("SubmitLogin")));
+        public ButtonElement SingIn => new ButtonElement(Search.Id("SubmitLogin"));
 
         public MyAccount Login(string email, string password)
         {

@@ -13,18 +13,11 @@ namespace MentorshipAutomation.PageObjects.Pages
     {
         public void AddAllProductToCart()
         {
-            var productsIWebElements = WebDriver.GetDriver().FindElements(By.XPath("//div[@class='product-container']"));
-            List<ProductContainer> products = new List<ProductContainer>();
-            foreach (var product in productsIWebElements)
-            {
-                products.Add(new ProductContainer(product));
-            }
+            var products = DriverManager.Current.FindElements(Search.XPath("//div[@class='product-container']")).Select(product => new ProductContainer(product)).ToList();
 
             foreach (var product in products)
             {
-                product.MoveTo();
-                Thread.Sleep(500);
-                product.AddToCart.Click();
+                product.AddProductToCart();
                 var cartLayer = new CartLayer();
                 cartLayer.ContinueShopping.Click();
             }
@@ -32,13 +25,9 @@ namespace MentorshipAutomation.PageObjects.Pages
 
         public void GoToProduct()
         {
-            var productsIWebElements = WebDriver.GetDriver().FindElements(By.XPath("//div[@class='product-container']"));
-            var product = new ProductContainer(productsIWebElements.First());
+            var product = new ProductContainer(DriverManager.Current.FindElements(Search.XPath("//div[@class='product-container']")).First());
 
-            product.MoveTo();
-            Thread.Sleep(500);
-            product.More.Click();
-
+            product.AddProductToCart();
         }
     }
 }

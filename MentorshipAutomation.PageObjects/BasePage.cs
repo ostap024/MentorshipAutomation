@@ -12,7 +12,7 @@ namespace MentorshipAutomation.PageObjects
     {
         #region Properties
 
-        public virtual string PageTitle => WebDriver.GetDriver().Title ?? string.Empty;
+        public virtual string PageTitle => DriverManager.Current.Title ?? string.Empty;
 
 
         public virtual string PagePath => string.Empty;
@@ -20,7 +20,6 @@ namespace MentorshipAutomation.PageObjects
 
         public virtual string PageUrl => TestConstants.BaseUrl + PagePath;
 
-        protected IWebDriver Driver = WebDriver.GetDriver();
 
         #endregion
 

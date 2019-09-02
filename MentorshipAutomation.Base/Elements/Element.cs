@@ -7,16 +7,14 @@ using OpenQA.Selenium.Interactions;
 
 namespace MentorshipAutomation.Base.Elements
 {
-    public class HtmlElement
+    public abstract class Element
     {
-        internal Search SearchWrapper;
-        protected IWebDriver Driver => WebDriver.GetDriver();
+        public Search SearchWrapper;
+        protected IWebElement WebElement => DriverManager.Current.FindElement(SearchWrapper);
 
-        protected IWebElement WebElement { get; }
-
-        public HtmlElement(IWebElement element)
+        protected Element(Search searchWrapper)
         {
-            WebElement = element;
+            SearchWrapper = searchWrapper;
         }
         #region Attributes
         public virtual string Text => GetText();
@@ -48,9 +46,9 @@ namespace MentorshipAutomation.Base.Elements
 
         public void MoveTo()
         {
-            Actions action = new Actions(Driver);
+            Actions action = new Actions(DriverManager.Current.GetDriver);
             action.MoveToElement(WebElement).Perform();
-        } 
+        }
         public void Click()
         {
             WebElement.Click();

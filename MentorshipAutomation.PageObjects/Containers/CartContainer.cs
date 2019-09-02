@@ -9,8 +9,7 @@ namespace MentorshipAutomation.PageObjects.Containers
 {
     public class CartContainer
     {
-        public ButtonElement Cart => new ButtonElement(WebDriver.GetDriver()
-            .FindElement(By.XPath("//div[@class='shopping_cart']//a[contains(@href,'controller=order')]")));
+        public ButtonElement Cart => new ButtonElement(Search.XPath("//div[@class='shopping_cart']//a[contains(@href,'controller=order')]"));
 
     }
 }

@@ -6,16 +6,15 @@ namespace MentorshipAutomation.PageObjects.Containers
 {
     public class MainMenuContainer
     {
-        public ButtonElement Login => new ButtonElement(WebDriver.GetDriver().FindElement(By.ClassName("login")));
+        public ButtonElement Login => new ButtonElement(Search.ClassName("login")); 
 
-        public ButtonElement Logout => new ButtonElement(WebDriver.GetDriver().FindElement(By.ClassName("logout")));
+        public ButtonElement Logout => new ButtonElement(Search.ClassName("logout"));
 
-        public ButtonElement MyAccount => new ButtonElement(WebDriver.GetDriver().FindElement(By.ClassName("account")));
+        public ButtonElement MyAccount => new ButtonElement(Search.ClassName("account"));
 
-        public ButtonElement Women => new ButtonElement(WebDriver.GetDriver().FindElement(
-            By.XPath("//div[@id='block_top_menu']//ul//a[@title='Women']")));
+        public ButtonElement Women => new ButtonElement(Search.XPath("//div[@id='block_top_menu']//ul//a[@title='Women']"));
 
-        public ButtonElement ContactUs => new ButtonElement(WebDriver.GetDriver().FindElement(By.XPath("//div[@id='contact-link']/a")));
+        public ButtonElement ContactUs => new ButtonElement(Search.XPath("//div[@id='contact-link']/a"));
 
         public CartContainer CartContainer => new CartContainer();
     }
